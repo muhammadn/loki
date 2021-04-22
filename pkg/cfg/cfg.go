@@ -48,7 +48,7 @@ func Unmarshal(dst Cloneable, sources ...Source) error {
 func Parse(dst Cloneable) error {
 	return dParse(dst,
 		dDefaults(flag.CommandLine),
-		YAMLFlag(os.Args[1:], "config.file"),
+		YAMLFlag(os.Args[1:], "config"),
 		Flags(),
 	)
 }

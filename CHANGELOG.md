@@ -1,7 +1,22 @@
+<<<<<<< HEAD
 ## Master
 
 * [3532](https://github.com/grafana/loki/pull/3532) **MichelHollands**: Update vendored Cortex to 8a2e2c1eeb65
 * [3446](https://github.com/grafana/loki/pull/3446) **pracucci, owen-d**: Remove deprecated config `querier.split-queries-by-day` in favor of `querier.split-queries-by-interval`
+=======
+## 2.2.1 (2021/04/05)
+
+2.2.1 fixes several important bugs, it is recommended everyone running 2.2.0 upgrade to 2.2.1
+
+2.2.1 also adds the `labelallow` pipeline stage in Promtail which lets an allowlist be created for what labels will be sent by Promtail to Loki.
+
+* [3468](https://github.com/grafana/loki/pull/3468) **adityacs**: Support labelallow stage in Promtail
+* [3502](https://github.com/grafana/loki/pull/3502) **cyriltovena**: Fixes a bug where unpack would mutate log line.
+* [3540](https://github.com/grafana/loki/pull/3540) **cyriltovena**: Support for single step metric query.
+* [3550](https://github.com/grafana/loki/pull/3550) **cyriltovena**: Fixes a bug in MatrixStepper when sharding queries.
+* [3566](https://github.com/grafana/loki/pull/3566) **cyriltovena**: Properly release the ticker in Loki client.
+* [3573](https://github.com/grafana/loki/pull/3573) **cyriltovena**: Fixes a race when using specific tenant and multi-client.
+>>>>>>> 4c334c8e11be3a29314cddaf7fb74f6ff89bac21
 
 ## 2.2.0 (2021/03/10)
 
@@ -9,7 +24,11 @@ With over 200 PR's 2.2 includes significant features, performance improvements, 
 
 The most upvoted issue for Loki was closed in this release! [Issue 74](https://github.com/grafana/loki/issues/74) requesting support for handling multi-line logs in Promtail was implemented in [PR 3024](https://github.com/grafana/loki/pull/3024). Thanks @jeschkies!
 
+<<<<<<< HEAD
 Other exciting news for Promtail, [PR 3246](https://github.com/grafana/loki/pull/3246) by @cyriltovena introduces support for reading Windows Events!
+=======
+Other exciting news for Promtail, [PR 3246](https://github.com/grafana/loki/pull/3246) by @cyriltovena introduces support for reading Windows Events! 
+>>>>>>> 4c334c8e11be3a29314cddaf7fb74f6ff89bac21
 
 Switching to Loki, @owen-d has added a write ahead log to Loki! [PR 2981](https://github.com/grafana/loki/pull/2981) was the first of many as we have spent the last several months using and abusing our write ahead logs to flush out any bugs!
 
@@ -21,7 +40,11 @@ There are many other noteworthy additions and fixes, too many to list, but we sh
 
 Thanks to everyone for another exciting Loki release!!
 
+<<<<<<< HEAD
 Please read the [Upgrade Guide](https://github.com/grafana/loki/blob/master/docs/sources/upgrading/_index.md#220) before upgrading for a smooth experience.
+=======
+Please read the [Upgrade Guide](https://github.com/grafana/loki/blob/master/docs/sources/upgrading/_index.md#220) before upgrading for a smooth experience. 
+>>>>>>> 4c334c8e11be3a29314cddaf7fb74f6ff89bac21
 
 TL;DR Loki 2.2 changes the internal chunk format which limits what versions you can downgrade to, a bug in how many queries were allowed to be scheduled per tenant was fixed which might affect your `max_query_parallelism` and `max_outstanding_per_tenant` settings, and we fixed a mistake related `scrape_configs` which do not have a `pipeline_stages` defined. If you have any Promtail `scrape_configs` which do not specify `pipeline_stages` you should go read the upgrade notes!
 

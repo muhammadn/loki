@@ -19,10 +19,21 @@ If possible try to stay current and do sequential updates. If you want to skip v
 
 -_add changes here which are unreleased_
 
+<<<<<<< HEAD
 ## 2.2.0
 
 ### Loki
 
+=======
+## 2.2.1
+
+Review the notes for 2.2.0, there are no additional update notes.
+
+## 2.2.0
+
+### Loki
+
+>>>>>>> 4c334c8e11be3a29314cddaf7fb74f6ff89bac21
 **Be sure to upgrade to 2.0 or 2.1 BEFORE upgrading to 2.2**
 
 In Loki 2.2 we changed the internal version of our chunk format from v2 to v3, this is a transparent change and is only relevant if you every try to _downgrade_ a Loki installation. We incorporated the code to read v3 chunks in 2.0.1 and 2.1, as well as 2.2 and any future releases.
@@ -47,7 +58,11 @@ In 2.2 we changed this behavior to apply the `max_query_parallelism` after split
 
 You could consider multiplying your current `max_query_parallelism` setting by 16 to obtain the previous behavior, though in practice we suspect few people would really want it this high unless you have a significant querier worker pool.
 
+<<<<<<< HEAD
 **Also be aware to make sure `max_outstanding_per_tenant` is always greater than `max_query_parallelism` or large queries will automatically fail with a 429 back to the user.**
+=======
+**Also be aware to make sure `max_outsdanting_per_tenant` is always greater than `max_query_parallelism` or large queries will automatically fail with a 429 back to the user.**
+>>>>>>> 4c334c8e11be3a29314cddaf7fb74f6ff89bac21
 
 
 
